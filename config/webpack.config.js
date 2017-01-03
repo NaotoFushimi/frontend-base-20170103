@@ -17,7 +17,7 @@ module.exports = {
     devtool: '#source-map',
     cache:true,
     resolve: {
-        extensions: [ '.css', '.webpack.js', '.web.js', '.ts', '.js' , '.tsx' , 'png' , 'jpg' , 'jpeg' , 'gif', 'svg'],
+        extensions: [ '.css',   '.ts', '.js' , '.tsx' , 'png' , 'jpg' , 'jpeg' , 'gif', 'svg'],
         alias: {
             //'react': 'react-lite',
             //'react-dom': 'react-lite'
@@ -42,20 +42,22 @@ module.exports = {
                     {
                         loader : "ts-loader",
                         options : {
-                            ts: {
-                                compiler: 'ntypescript'
-                            }
+                            compiler: 'ntypescript'
                         },
                     }
                 ],
                 exclude: /node_modules/,
             },
-            /*
+
             {
                 test: /\.css$/,
-                use : "style-loader!css-loader?modules&localIdentName=[local]---[hash:base64:10]&sourceMap&importLoaders=1!postcss-loader"
+                use : [
+                    {loader:"style-loader"},
+                    {loader:"css-loader?modules&localIdentName=[local]---[hash:base64:10]&sourceMap&importLoaders=1"},
+                    {loader:"postcss-loader"}
+                ]
             },
-            */
+
         ]
     },
     externals: {

@@ -8,7 +8,11 @@
     "pretty" : true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "types": [
+      "node"
+    ]
   },
   "exclude": [
     "node_modules"
