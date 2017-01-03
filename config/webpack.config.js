@@ -17,10 +17,10 @@ module.exports = {
     devtool: '#source-map',
     cache:true,
     resolve: {
-        extensions: [ '.css',   '.ts', '.js' , '.tsx' , 'png' , 'jpg' , 'jpeg' , 'gif', 'svg'],
+        extensions: [ '.webpack.js', '.web.js', '.css', '.ts', '.js' , '.tsx' , 'png' , 'jpg' , 'jpeg' , 'gif', 'svg'],
         alias: {
             //'react': 'react-lite',
-            //'react-dom': 'react-lite'
+            //'react-dom': 'react-lite',
         },
         modules : ['node_modules'] /*  追加 */
     },
@@ -29,7 +29,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
-        new WebpackNotifierPlugin({alwaysNotify: true})
+        new WebpackNotifierPlugin({alwaysNotify: true}),
     ],
     module: {
         rules: [
@@ -57,7 +57,6 @@ module.exports = {
                     {loader:"postcss-loader"}
                 ]
             },
-
         ]
     },
     externals: {

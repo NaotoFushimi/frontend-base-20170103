@@ -6,7 +6,6 @@ Boilerplate for modern frontend environment (typescript + babel + modern CSS)
 * babel
 * webpack
 * typescript
-  * linq.ts
 
 
 
