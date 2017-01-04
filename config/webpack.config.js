@@ -1,6 +1,5 @@
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const precss     = require('precss');
+const cssnext = require('postcss-cssnext');
 const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const uglifySaveLicense = require("uglify-save-license");
@@ -82,7 +81,7 @@ module.exports = {
                         loader:"postcss-loader",
                         options : {
                             plugins: () => [
-                                autoprefixer, precss
+                                cssnext
                             ]
                         }
                     }
