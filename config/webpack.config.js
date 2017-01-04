@@ -31,7 +31,7 @@ module.exports = {
         filename: 'js/[name].js',
     },
     // Turn on sourcemaps
-    devtool: '#source-map',
+    devtool: isProduction ? false : 'source-map' ,
     cache:true,
     resolve: {
         extensions: [ '.webpack.js', '.web.js', '.css', '.ts', '.js' , '.tsx' , 'png' , 'jpg' , 'jpeg' , 'gif', 'svg'],

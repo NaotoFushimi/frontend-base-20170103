@@ -11,6 +11,7 @@
     "moduleResolution": "node",
     "strictNullChecks": true,
     "skipLibCheck": true,     // ビルド高速化（型定義内の型チェック無効化）
+    "alwaysStrict" : true,
     "types": [
       "node"
     ],

@@ -12,7 +12,6 @@
   "dependencies": {
     "@types/node": "^6.0.55",
     "autoprefixer": "^6.6.0",
-    "ava": "^0.17.0",
     "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.20.0",
     "css-loader": "^0.26.1",
