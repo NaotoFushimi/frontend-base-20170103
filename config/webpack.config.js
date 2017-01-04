@@ -1,17 +1,20 @@
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const precss       = require('precss');
+const precss     = require('precss');
 const path = require('path');
 //const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier');
 
-console.log(process.env.NODE_ENV);
+const env = process.env.NODE_ENV
+const isProduction = env === "production";
 
 module.exports = {
-    entry: './src/ts/App.ts',
+    entry: {
+        bundle : './src/ts/App.ts'
+    },
     output: {
         path : "htdocs",
-        filename: 'js/bundle.js',
+        filename: 'js/[name].js',
     },
     // Turn on sourcemaps
     devtool: '#source-map',
@@ -42,8 +45,11 @@ module.exports = {
                     {
                         loader : "ts-loader",
                         options : {
-                            compiler: 'ntypescript'
-                        },
+                            compiler: 'ntypescript',
+                            compilerOptions: {
+                                sourceMap: !isProduction
+                            }
+                        }
                     }
                 ],
                 exclude: /node_modules/,
@@ -53,8 +59,24 @@ module.exports = {
                 test: /\.css$/,
                 use : [
                     {loader:"style-loader"},
-                    {loader:"css-loader?modules&localIdentName=[local]---[hash:base64:10]&sourceMap&importLoaders=1"},
-                    {loader:"postcss-loader"}
+                    {
+                        //loader:"css-loader?modules&localIdentName=[local]---[hash:base64:10]&sourceMap&importLoaders=1"},
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            localIdentName: "[local]---[hash:base64:10]",
+                            sourceMap: true,
+                            importLoaders: 1
+                        }
+                    },
+                    {
+                        loader:"postcss-loader",
+                        options : {
+                            plugins: () => [
+                                autoprefixer, precss
+                            ]
+                        }
+                    }
                 ]
             },
         ]
@@ -62,9 +84,12 @@ module.exports = {
     externals: {
         //CDNで読み込むやつはここで除外しとくと良い
     },
-    /*
-    postcss: function () {
-        return [autoprefixer, precss];
-    },
-    */
+    performance: {
+        hints: false
+    }
+  /*
+   postcss: function () {
+   return [autoprefixer, precss];
+   },
+   */
 }

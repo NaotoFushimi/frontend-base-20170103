@@ -1,4 +1,7 @@
-const u: any = require("../css/style.css");
+const u = require("../css/style.css");
+if (!window["_babelPolyfill"]) {
+    //require("babel-polyfill");
+}
 
 //import {List} from "linqts";
 console.log(59);

@@ -10,8 +10,15 @@
     "removeComments": false,
     "moduleResolution": "node",
     "strictNullChecks": true,
+    "skipLibCheck": true,     // ビルド高速化（型定義内の型チェック無効化）
     "types": [
       "node"
+    ],
+    "lib": [                  // 使用する標準型定義の指定（ target が ES5, ES2015 以外の場合に必要）
+      "es2017",
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ]
   },
   "exclude": [
