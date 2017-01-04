@@ -7,6 +7,7 @@ Boilerplate for modern frontend environment (typescript + babel + modern CSS)
 * webpack2
 * typescript@next
 * ava
+* cssnext
 
 ## How to use
 
