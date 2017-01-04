@@ -4,20 +4,18 @@ Boilerplate for modern frontend environment (typescript + babel + modern CSS)
 
 ## Core Modules
 * babel
-* webpack
-* typescript
-
-
+* webpack2
+* typescript@next
+* ava
 
 ## How to use
 
 ```
-git clone https://github.com/NaotoFushimi/frontend-base-20170103.git
+git clone https://github.com/NaotoFushimi/frontend-base-20170103.git <Your Project Name>
 ```
 
 init
 ```
-rm -rf .git
 yarn install
 ```
 
