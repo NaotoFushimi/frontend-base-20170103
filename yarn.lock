@@ -2907,10 +2907,6 @@ npmlog@^4.0.1:
     gauge "~2.7.1"
     set-blocking "~2.0.0"
 
-ntypescript@^1.201609302242.1:
-  version "1.201609302242.1+c302893a6201cbd822d6040b8361ad7a0ee506fa"
-  resolved "https://registry.yarnpkg.com/ntypescript/-/ntypescript-1.201609302242.1.tgz#309bed5ffda2f695cbd70d3561b8c0807f025c7b"
-
 num2fraction@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
@@ -4307,6 +4303,10 @@ typescript@^2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.1.4.tgz#b53b69fb841126acb1dd4b397d21daba87572251"
 
+typescript@next:
+  version "2.2.0-dev.20170103"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.0-dev.20170103.tgz#0a67020f9b01ca6f97c4f08fc007d314dda1d701"
+
 uglify-js@^2.7.5:
   version "2.7.5"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.7.5.tgz#4612c0c7baaee2ba7c487de4904ae122079f2ca8"
@@ -4315,6 +4315,10 @@ uglify-js@^2.7.5:
     source-map "~0.5.1"
     uglify-to-browserify "~1.0.0"
     yargs "~3.10.0"
+
+uglify-save-license@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/uglify-save-license/-/uglify-save-license-0.4.1.tgz#95726c17cc6fd171c3617e3bf4d8d82aa8c4cce1"
 
 uglify-to-browserify@~1.0.0:
   version "1.0.2"

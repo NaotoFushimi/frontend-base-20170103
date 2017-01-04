@@ -2,11 +2,25 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const precss     = require('precss');
 const path = require('path');
-//const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackNotifierPlugin = require('webpack-notifier');
+const uglifySaveLicense = require("uglify-save-license");
 
 const env = process.env.NODE_ENV
 const isProduction = env === "production";
+
+const webpackPlugins = [
+    new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new WebpackNotifierPlugin({alwaysNotify: true}),
+];
+
+if (isProduction){
+    //圧縮
+    webpackPlugins.push(new webpack.optimize.UglifyJsPlugin({
+        output: { comments: uglifySaveLicense }   // リリースビルドのみ uglify する
+    }));
+}
 
 module.exports = {
     entry: {
@@ -28,12 +42,7 @@ module.exports = {
         modules : ['node_modules'] /*  追加 */
     },
     // Add minification
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        }),
-        new WebpackNotifierPlugin({alwaysNotify: true}),
-    ],
+    plugins: webpackPlugins,
     module: {
         rules: [
             {
@@ -45,7 +54,7 @@ module.exports = {
                     {
                         loader : "ts-loader",
                         options : {
-                            compiler: 'ntypescript',
+                            compiler: 'typescript',
                             compilerOptions: {
                                 sourceMap: !isProduction
                             }
@@ -87,9 +96,4 @@ module.exports = {
     performance: {
         hints: false
     }
-  /*
-   postcss: function () {
-   return [autoprefixer, precss];
-   },
-   */
 }
