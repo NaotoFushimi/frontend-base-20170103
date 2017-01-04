@@ -25,3 +25,15 @@ watch & build
 yarn run watch
 
 ```
+
+production build 
+```
+yarn run prod
+
+```
+
+
+unit test
+```
+yarn run test
+```

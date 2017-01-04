@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/tsc src/ts/* --outDir test/modules &&  ./node_modules/.bin/ava test/spec/ && rm -rf test/modules/*.js",
-    "watch": "NODE_ENV=development ./node_modules/.bin/webpack --watch -d --progress --colors --config ./config/webpack.config.js"
+    "watch": "NODE_ENV=development ./node_modules/.bin/webpack --watch -d --progress --colors --config ./config/webpack.config.js",
+    "prod": "NODE_ENV=production ./node_modules/.bin/webpack -d --progress --colors --config ./config/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
