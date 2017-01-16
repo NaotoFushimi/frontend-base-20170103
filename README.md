@@ -6,7 +6,7 @@ Boilerplate for modern frontend environment (typescript + babel + modern CSS)
 * babel
 * webpack2
 * typescript@next
-* ava
+* mocha + power-assert
 * cssnext
 
 ## How to use
@@ -36,5 +36,5 @@ yarn run prod
 
 unit test
 ```
-yarn run test
+yarn test
 ```
