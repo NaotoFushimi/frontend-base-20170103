@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const cssnext = require('postcss-cssnext');
 const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const uglifySaveLicense = require("uglify-save-license");
@@ -49,6 +48,15 @@ module.exports = {
                 use: [
                     {
                         loader : "babel-loader",
+                        options: {
+                            presets: [
+                                //"es2015",
+                                ["env", {
+                                    browsers: ["last 2 versions"]
+                                }]
+                            ],
+                            //plugins: ["transform-runtime" , "transform-es2015-block-scoping"]
+                        }
                     },
                     {
                         loader : "ts-loader",
@@ -64,7 +72,7 @@ module.exports = {
             },
 
             {
-                test: /\.css$/,
+                test: /\.(css|pcss)$/,
                 use : [
                     {loader:"style-loader"},
                     {
@@ -74,14 +82,18 @@ module.exports = {
                             modules: true,
                             localIdentName: "[local]---[hash:base64:10]",
                             sourceMap: true,
-                            importLoaders: 1
+                            importLoaders: 1,
+                            url : false
                         }
                     },
                     {
                         loader:"postcss-loader",
                         options : {
+                            ident: 'postcss',
                             plugins: () => [
-                                cssnext
+                                require("postcss-import"),
+                                require('postcss-cssnext'),
+                                require('postcss-flexbugs-fixes'),
                             ]
                         }
                     }
@@ -91,6 +103,14 @@ module.exports = {
     },
     externals: {
         //CDNで読み込むやつはここで除外しとくと良い
+
+        //'react': 'React',
+        //'react-dom': 'ReactDOM',
+        ////'react-router': 'ReactRouter',
+        //'react-addons-transition-group': 'React.addons.TransitionGroup',
+        //'react-addons-pure-render-mixin': 'React.addons.PureRenderMixin',
+        //'react-addons-create-fragment': 'React.addons.createFragment',
+        //'react-addons-update': 'React.addons.update',
     },
     performance: {
         hints: false
