@@ -2,13 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const uglifySaveLicense = require("uglify-save-license");
-const nodeExternals = require('webpack-node-externals');
-
-const fs = require("fs")
 
 const env = process.env.NODE_ENV
 const isProduction = env === "production";
-const isTest = env === "test";
 
 const webpackPlugins = [
     new webpack.DefinePlugin({
@@ -24,25 +20,11 @@ if (isProduction){
     }));
 }
 
-function createTestEntryPoint(srcpath , destPrefix) {
-    const files = {}
-    fs.readdirSync(srcpath).filter((file)=> {
-
-        const destFileName = destPrefix + file.replace(/\.ts$/ , ".js");
-        files[destFileName] = ["babel-polyfill" , srcpath + "/" + file];
-    });
-    return files;
-}
-
-const testPaths = createTestEntryPoint("./test/spec" , "test/build/")
-
 module.exports = {
-    entry: isTest ? testPaths :{
+    entry: {
         bundle : './src/ts/App.ts'
     },
-    output: isTest ? {
-            filename: '[name]',
-        }:{
+    output: {
         path : "htdocs",
         filename: 'js/[name].js',
     },
@@ -119,7 +101,7 @@ module.exports = {
             },
         ]
     },
-    externals: isTest ? [nodeExternals()] : {
+    externals: {
         //CDNで読み込むやつはここで除外しとくと良い
 
         //'react': 'React',
