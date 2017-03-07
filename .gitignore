@@ -5,3 +5,4 @@ node_modules
 .git
 test/modules/*
 test/build
+*.log
