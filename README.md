@@ -16,8 +16,8 @@ git clone https://github.com/NaotoFushimi/frontend-base-20170103.git <Your Proje
 ```
 
 init
-```
-yarn install
+```bash
+npm run initial
 ```
 
 
