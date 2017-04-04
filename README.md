@@ -27,9 +27,9 @@ yarn run watch
 
 ```
 
-production build 
+production build (minify , remove comment , delete console)
 ```
-yarn run prod
+yarn run production
 
 ```
 
