@@ -20,6 +20,9 @@ const webpackPlugins = [
 if (isProduction){
     //圧縮
     webpackPlugins.push(new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            drop_console: true,
+        },
         output: { comments: uglifySaveLicense }   // リリースビルドのみ uglify する
     }));
 }
