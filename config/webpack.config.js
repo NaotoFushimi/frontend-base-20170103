@@ -30,9 +30,8 @@ if (isProduction){
 function createTestEntryPoint(srcpath , destPrefix) {
     const files = {}
     fs.readdirSync(srcpath).filter((file)=> {
-
         const destFileName = destPrefix + file.replace(/\.ts$/ , ".js");
-        files[destFileName] = [ "babel-polyfill" , srcpath + "/" + file];
+        files[destFileName] = [ /*"babel-polyfill" ,*/ srcpath + "/" + file];
     });
     return files;
 }
@@ -71,9 +70,12 @@ module.exports = {
                         loader : "babel-loader",
                         options: {
                             presets: [
-                                //"es2015",
                                 ["env", {
-                                    browsers: ["last 2 versions"]
+                                    "targets": {
+                                        "browsers": ["last 2 versions", "safari >= 7"],
+                                        uglify : true
+                                    },
+                                   // "exclude": ["transform-regenerator"]
                                 }]
                             ],
                             //plugins: ["transform-runtime" , "transform-es2015-block-scoping"]

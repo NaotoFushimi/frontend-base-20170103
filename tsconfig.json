@@ -3,7 +3,7 @@
     "jsx": "react",
     "module": "es6",
     "sourceMap" : true, 
-    "target" : "es2015",
+    "target" : "es5",
     "allowJs" : true,
     "pretty" : true,
     "experimentalDecorators": true,
@@ -21,7 +21,8 @@
       "dom",
       "dom.iterable",
       "scripthost",
-      "es2015.generator"
+      "es2015.generator",
+      "es2016"
     ]
   },
   "exclude": [
