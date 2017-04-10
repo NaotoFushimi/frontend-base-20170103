@@ -71,7 +71,7 @@ module.exports = {
                         options: {
                             presets: [
                                 ["env", {
-                                    "targets": {
+                                    targets: {
                                         "browsers": ["last 2 versions", "safari >= 7"],
                                         uglify : true
                                     },

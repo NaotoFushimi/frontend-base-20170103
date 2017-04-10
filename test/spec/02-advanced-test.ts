@@ -6,5 +6,5 @@ test.serial(async t => {
 
     const wait = await new Promise(res => setTimeout(res , 2000));
 
-    t.is(3*4 , 12)
+    t.is(3 * 4 , 12)
 });

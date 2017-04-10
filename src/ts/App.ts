@@ -1,5 +1,3 @@
-
-//import {List} from "linqts";
 console.log(59);
 
 const u3 = {
@@ -12,6 +10,7 @@ const a = async ()=>{
     console.log("start")
     await new Promise(r => setTimeout(r , 2000));
     console.log("end")
+    alert(1)
 }
 
 a();
@@ -23,3 +22,4 @@ const uu2 = [...uu , 6];
 
 console.log(u4)
 console.log(uu2)
+
