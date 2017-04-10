@@ -7,9 +7,7 @@
     "initial": "rm -rf .git && yarn install && npm run build-test",
     "watch": "NODE_ENV=development ./node_modules/.bin/webpack --watch -d --progress --colors --config ./config/webpack.config.js",
     "production": "NODE_ENV=production ./node_modules/.bin/webpack --progress --colors --config ./config/webpack.config.js",
-    "test-simple": "./node_modules/.bin/mocha --compilers ts:espower-typescript/guess  test/spec/*-test.* --timeout 30000",
-    "test": "./node_modules/.bin/mocha test/build/**/*.js  --timeout 40000",
-    "test-webpack": "npm run build-test; npm test",
+    "test": "npm run build-test && ./node_modules/.bin/mocha test/build/**/*.js  --timeout 40000",
     "build-test": "NODE_ENV=test ./node_modules/.bin/webpack -d --progress --colors --config ./config/webpack.config.js;",
     "watch-test": "NODE_ENV=test ./node_modules/.bin/webpack --watch -d --progress --colors --config ./config/webpack.config.js;"
   },

@@ -7,7 +7,7 @@ describe("section", ()=>{
         assert.equal(3 ,3)
 
         await new Promise(r => setTimeout(r , 2000))
-        assert.equal(9 ,19)
+        assert.equal(19 ,19)
 
     });
 });
