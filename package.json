@@ -7,7 +7,7 @@
     "initial": "rm -rf .git && yarn install && npm run build-test",
     "watch": "NODE_ENV=development ./node_modules/.bin/webpack --watch -d --progress --colors --config ./config/webpack.config.js",
     "production": "NODE_ENV=production ./node_modules/.bin/webpack --progress --colors --config ./config/webpack.config.js",
-    "test": "npm run build-test && ./node_modules/.bin/mocha test/build/**/*.js  --timeout 40000",
+    "test": "npm run build-test && ava",
     "build-test": "NODE_ENV=test ./node_modules/.bin/webpack -d --progress --colors --config ./config/webpack.config.js;",
     "watch-test": "NODE_ENV=test ./node_modules/.bin/webpack --watch -d --progress --colors --config ./config/webpack.config.js;"
   },
@@ -15,9 +15,9 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "@types/mocha": "^2.2.37",
     "@types/node": "^6.0.55",
     "@types/power-assert": "^1.4.29",
+    "ava": "^0.19.0",
     "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.20.0",
     "babel-preset-env": "^1.2.0",
@@ -25,7 +25,6 @@
     "espower-typescript": "^7.0.0",
     "espower-typescript-babel": "^0.2.0",
     "linqts": "^1.7.1",
-    "mocha": "^3.2.0",
     "postcss-cssnext": "^2.9.0",
     "postcss-flexbugs-fixes": "^2.1.0",
     "postcss-import": "^9.1.0",

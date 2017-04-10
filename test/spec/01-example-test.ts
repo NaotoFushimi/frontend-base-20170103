@@ -1,13 +1,8 @@
-import "mocha";
-import assert = require("power-assert");
-//require('babel-polyfill')
+import test from 'ava';
 
-describe("section", ()=>{
-    it("test case",  async ()=>{
-        assert.equal(3 ,3)
-
-        await new Promise(r => setTimeout(r , 2000))
-        assert.equal(19 ,19)
-
-    });
+test(t => {
+    t.deepEqual([1, 2], [1, 2]);
+    t.deepEqual([800, 2], [80 * 10, 2]);
+    t.deepEqual([1, 2], [1, 2]);
 });
+
