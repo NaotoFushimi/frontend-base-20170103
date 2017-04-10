@@ -20,7 +20,8 @@
       "es2017",
       "dom",
       "dom.iterable",
-      "scripthost"
+      "scripthost",
+      "es2015.generator"
     ]
   },
   "exclude": [

@@ -32,7 +32,7 @@ function createTestEntryPoint(srcpath , destPrefix) {
     fs.readdirSync(srcpath).filter((file)=> {
 
         const destFileName = destPrefix + file.replace(/\.ts$/ , ".js");
-        files[destFileName] = [ /* "babel-polyfill"  , */ srcpath + "/" + file];
+        files[destFileName] = [ "babel-polyfill" , srcpath + "/" + file];
     });
     return files;
 }
