@@ -69,16 +69,14 @@ module.exports = {
                     {
                         loader : "babel-loader",
                         options: {
-                            presets: [
-                                ["env", {
-                                    targets: {
-                                        "browsers": ["last 2 versions", "safari >= 7"],
-                                        uglify : true
-                                    },
-                                   // "exclude": ["transform-regenerator"]
-                                }]
-                            ],
-                            //plugins: ["transform-runtime" , "transform-es2015-block-scoping"]
+                            presets: ["env"],
+                            "plugins": [
+                                //"dynamic-import-webpack",
+                                //"transform-decorators-legacy",
+                                //"transform-class-properties",
+                                //"transform-runtime",
+                                //"transform-object-rest-spread"
+                            ]
                         }
                     },
                     {
