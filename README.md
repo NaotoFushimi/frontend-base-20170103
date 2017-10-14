@@ -4,8 +4,8 @@ Boilerplate for modern frontend environment (typescript + babel + modern CSS)
 
 ## Core Modules
 * babel
-* webpack2
-* typescript@next
+* webpack3
+* typescript
 * mocha + power-assert
 * cssnext
 
