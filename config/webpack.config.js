@@ -45,7 +45,7 @@ module.exports = {
     output: isTest ? {
             filename: '[name]',
         }:{
-        path : "htdocs",
+        path : __dirname + "/../htdocs",
         filename: 'js/[name].js',
     },
     // Turn on sourcemaps
