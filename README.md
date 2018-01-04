@@ -12,7 +12,7 @@ Boilerplate for modern frontend environment (typescript + babel + modern CSS)
 ## How to use
 
 ```
-git clone https://github.com/NaotoFushimi/frontend-base-20170103.git <Your Project Name>
+git clone https://github.com/naoto243/frontend-base-20170103.git <Your Project Name>
 ```
 
 init
